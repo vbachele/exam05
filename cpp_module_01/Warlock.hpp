@@ -6,11 +6,10 @@
 /*   By: vbachele <vbachele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 11:08:37 by vbachele          #+#    #+#             */
-/*   Updated: 2022/10/26 15:01:28 by vbachele         ###   ########.fr       */
+/*   Updated: 2022/10/26 17:39:57 by vbachele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
 #include <iostream>
 
 class Warlock

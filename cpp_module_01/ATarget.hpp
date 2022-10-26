@@ -1,39 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Warlock.hpp                                        :+:      :+:    :+:   */
+/*   ATarget.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vbachele <vbachele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 11:08:37 by vbachele          #+#    #+#             */
-/*   Updated: 2022/10/26 15:01:28 by vbachele         ###   ########.fr       */
+/*   Created: 2022/10/26 15:45:19 by vbachele          #+#    #+#             */
+/*   Updated: 2022/10/26 17:51:28 by vbachele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
 #include <iostream>
+#include "ASpell.hpp"
 
-class Warlock
+class ASpell;
+
+class ATarget
 {
 	public:
-		Warlock (std::string const &Wname, std::string const &Wtitle);
+		ATarget();
+		ATarget(std::string const &Atype);
+		virtual ~ATarget();
+		ATarget &operator=(ATarget const &other);
+		ATarget(ATarget const &other);
 
-		~Warlock ();
 
-		std::string const &getName() const;
+		virtual ATarget *clone() const = 0;
 
-		std::string const &getTitle() const;
+		std::string const &getType() const;
 
-		void setTitle(std::string const &newTitle);
+		//void getHitBySpell(Aspell const &spell) const;
 
-		void introduce() const;
 
 	private:
-		std::string name;
-		std::string title;
-
-		Warlock (Warlock &other);
-		Warlock ();
-
-		Warlock operator=(Warlock const &other);
+		std::string type;
 };
