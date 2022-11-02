@@ -6,12 +6,11 @@
 /*   By: vbachele <vbachele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 14:58:05 by vbachele          #+#    #+#             */
-/*   Updated: 2022/10/26 17:55:11 by vbachele         ###   ########.fr       */
+/*   Updated: 2022/11/02 14:00:53 by vbachele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-
 #include "iostream"
 
 class ATarget;

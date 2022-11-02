@@ -6,12 +6,11 @@
 /*   By: vbachele <vbachele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 15:34:24 by vbachele          #+#    #+#             */
-/*   Updated: 2022/10/26 17:52:53 by vbachele         ###   ########.fr       */
+/*   Updated: 2022/11/02 12:55:21 by vbachele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ASpell.hpp"
-
 
 ASpell::ASpell()
 {
@@ -41,6 +40,7 @@ ASpell::~ASpell()
 
 }
 
+/*** member functions  ***/
 
 std::string const &ASpell::getName() const
 {

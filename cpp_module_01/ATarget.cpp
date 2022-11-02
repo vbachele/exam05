@@ -6,7 +6,7 @@
 /*   By: vbachele <vbachele@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 15:59:58 by vbachele          #+#    #+#             */
-/*   Updated: 2022/10/26 17:46:45 by vbachele         ###   ########.fr       */
+/*   Updated: 2022/11/02 14:20:22 by vbachele         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,14 @@ ATarget::ATarget(ATarget const &other)
 	this->type = other.type;
 }
 
+/*** member functions ***/
+
 std::string const &ATarget::getType() const
 {
 	return (this->type);
 }
 
-// void	ATarget::getHitBySpell(ASpell const &spell) const
-// {
-// 	std::cout << this->type << " has been " << spell.getEffects() << std::endl
-// }
+void	ATarget::getHitBySpell(ASpell const &spell) const
+{
+	std::cout << this->type << " has been " << spell.getEffects() << std::endl;
+}
