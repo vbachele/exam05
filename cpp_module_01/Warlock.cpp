@@ -32,31 +32,26 @@ void Warlock::introduce() const
 	std::cout << this->name << ": I am " << this->name << ", " << this->title << "!" << std::endl;
 }
 
-void Warlock::learnSpell(ASpell *spell)
+
+void Warlock::learnSpell(ASpell* spell_ptr)
 {
-	if (spell)
-	{
-		map.insert(std::pair<std::string, ASpell *>(spell->getName(), spell->clone()));
-	}
+	if (spell_ptr)
+		map.insert(std::pair<std::string, ASpell *>(spell_ptr->getName(), spell_ptr->clone()));
 }
 
-void Warlock::forgetSpell(std::string spell)
+void Warlock::forgetSpell(std::string spell_name)
 {
-	std::map<std::string, ASpell *>::iterator it = map.find(spell);
+	std::map<std::string, ASpell *>::iterator it = map.find(spell_name);
 	if (it != map.end())
 		delete it->second;
-	map.erase(spell);
+	map.erase(spell_name);
 }
 
-void Warlock::launchSpell(std::string spellName, ATarget const &target)
+void Warlock::launchSpell(std::string spell_name, ATarget const &target_ref)
 {
-	ASpell *spell = map[spellName];
-	//std::cout << "DEBUG" << std::endl;
+	ASpell* spell = this->map[spell_name];
 	if (spell)
 	{
-		std::cout << "DEBUG" << std::endl;
-		spell->launch(target);
+		spell->launch(target_ref);
 	}
 }
-
-
