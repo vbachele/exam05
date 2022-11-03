@@ -30,7 +30,7 @@ void Warlock::setTitle(std::string  const &newTitle)
 
 void Warlock::introduce() const
 {
-	std::cout << this->name << ": I am " << this->name << ", " << this->title << "!" << std::endl;
+	std::cout << this->name << ": I am " << this->name << ", " << this->title << std::endl;
 }
 
 
@@ -46,10 +46,9 @@ void Warlock::forgetSpell(std::string spellName)
 
 void Warlock::launchSpell(std::string spellName, ATarget const &target_ref)
 {
-	ATarget const *test = 0;
-	if (test = &target_ref)
-		return;
 	ASpell *spell = this->book.createSpell(spellName);
 	if (spell)
+	{
 		spell->launch(target_ref);
+	}
 }

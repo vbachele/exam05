@@ -9,7 +9,7 @@ SpellBook::~SpellBook()
 {
 	std::map<std::string, ASpell *>::iterator itBegin = this->book.begin();
 	std::map<std::string, ASpell *>::iterator itEnd = this->book.end();
-	for (;itBegin != itEnd; itBegin++)
+	for (;itBegin != itEnd; ++itBegin)
 		delete itBegin->second;
 	this->book.clear();
 }
@@ -17,7 +17,7 @@ SpellBook::~SpellBook()
 void SpellBook::learnSpell(ASpell *spell)
 {
 	if (spell)
-		book.insert(std::pair<std::string, ASpell *>(spell->getName(), spell));
+		book.insert(std::pair<std::string, ASpell *>(spell->getName(), spell->clone()));
 }
 
 void SpellBook::forgetSpell(std::string const &spellName)
